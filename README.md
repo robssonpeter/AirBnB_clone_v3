@@ -156,6 +156,5 @@ No known bugs at this time.
 ## Authors
 Peter Mgembe   - [Github](https://github.com/robssonpeter) / [Twitter](https://twitter.com/robssonpeter)
 
-Second part of Airbnb: Joann Vuong
 ## License
 Public Domain. No copy write protection. 
