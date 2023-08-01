@@ -44,32 +44,16 @@ class FileStorage:
     def get(self, cls, id):
         """ The method to retrive a specific object from storage """
 
-        if cls in classes:
-            objs = self.all()
-            keys = objs.keys()
-            found_key = ""
-            for key in keys:
-                data = key.split('.')
-                is_class = data[0] == cls
-                id_match = id == data[1]
-                if is_class and id_match:
-                    found_key = key
-                    return objs[found_key]
+        if cls and id:
+            pattern = "{}.{}".format(cls, id)
+            all_obj = self.all(cls)
+            return all_obj.get(pattern)
         return None
     
     def count(self, cls=None):
         """ The method to count elements in the storage """
 
-        objs = self.all()
-        count = 0
-
-        if cls is None:
-            return len(objs.keys())
-        for key in objs.keys():
-            current = key.split('.')
-            if current[0] == cls:
-                count += 1
-        return count
+        return len(self.all(cls))
 
     def save(self):
         """serializes __objects to the JSON file (path: __file_path)"""
