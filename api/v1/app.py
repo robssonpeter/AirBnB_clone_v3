@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """ The new flask based api """
 from flask import Flask, Blueprint
 from models import storage
