@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """ The index file for calling the blueprint """
 from flask import jsonify
 from api.v1.views import app_views
