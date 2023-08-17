@@ -1,11 +1,12 @@
 #!/usr/bin/python3
 """ The new flask based api """
-from flask import Flask, Blueprint
-from models import storage
+from flask import Flask
+from models.engine.file_storage import FileStorage
+
 from api.v1.views import app_views
 from os import environ
 
-
+storage = FileStorage()
 app = Flask(__name__)
 app.register_blueprint(app_views)
 
